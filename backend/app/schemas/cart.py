@@ -1,0 +1,31 @@
+from pydantic import BaseModel, Field
+from typing import Optional
+
+
+class CartItemBase(BaseModel):
+    product_id: int = Field(..., description="Product id")
+    amount: int = Field(..., gt=0, description="Items amount (>0)")
+
+
+class CartItemCreate(CartItemBase):
+    pass
+
+
+class CartItemUpdate(BaseModel):
+    product_id: int = Field(..., description="Product id")
+    amiunt: int = Field(..., gt=0, description="New items amount (>0)" )
+
+
+class CartItem(BaseModel):
+    product_id: int
+    name: str = Field(..., description="Product name")
+    price: float = Field(..., description="Product price")
+    amount: int = Field(..., description="Items in cart amount")
+    subtotal: float = Field(..., description="Total price for item (amount*price)")
+    image_url: Optional[str] = Field(None, description="Product image URL")
+
+
+class CartResponse(BaseModel):
+    items: list[CartItem] = Field(..., description="List of items in cart")
+    total: float = Field(..., description="Total cart price")
+    items_count: int = Field(..., description="Total number of items in cart")

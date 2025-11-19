@@ -1,3 +1,4 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -6,12 +7,23 @@ from .database import init_db
 from .routes import products_router, categories_router, cart_router
 
 
+@asynccontextmanager
+def lifespan(app: FastAPI):
+    init_db()
+    yield
+
 app = FastAPI(
     title=settings.app_name,
     debug=settings.debug,
     docs_url="/api/docs",
-    redoc_url="/api/redoc"
+    redoc_url="/api/redoc",
+    lifespan=lifespan
 )
+
+
+app.include_router(categories_router)
+app.include_router(products_router)
+app.include_router(cart_router)
 
 
 app.add_middleware(

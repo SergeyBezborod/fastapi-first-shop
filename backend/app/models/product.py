@@ -11,6 +11,7 @@ class Product(Base):
     description = Column(Text, nullable=False)
     price = Column(Float, nullable=False)
     created_at = Column(DateTime, default=func.now())
+    image_url = Column(String)
     updated_at = Column(DateTime, default=func.now())
     category_id = Column(Integer, ForeignKey("categories.id"), nullable=False)
 

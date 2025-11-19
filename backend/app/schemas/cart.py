@@ -13,7 +13,7 @@ class CartItemCreate(CartItemBase):
 
 class CartItemUpdate(BaseModel):
     product_id: int = Field(..., description="Product id")
-    amiunt: int = Field(..., gt=0, description="New items amount (>0)" )
+    amount: int = Field(..., gt=0, description="New items amount (>0)" )
 
 
 class CartItem(BaseModel):

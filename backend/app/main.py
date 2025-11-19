@@ -8,7 +8,7 @@ from .routes import products_router, categories_router, cart_router
 
 
 @asynccontextmanager
-def lifespan(app: FastAPI):
+async def lifespan(app: FastAPI):
     init_db()
     yield
 

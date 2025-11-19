@@ -9,6 +9,7 @@ from .routes import products_router, categories_router, cart_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    """https://fastapi.tiangolo.com/advanced/events/#lifespan"""
     init_db()
     yield
 
@@ -43,5 +44,12 @@ def root():
     return {
         "message": "Wellcome to fastapi-shop API",
         "docs": "api/docs"
+    }
+
+
+@app.get("/health")
+def health_check():
+    return {
+        "status": 'OK'
     }
 

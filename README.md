@@ -6,55 +6,7 @@ Backend
 <p align="left"> <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge&logo=sqlalchemy&logoColor=white" alt="SQLAlchemy"> <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite"> <img src="https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white" alt="Pydantic"> <img src="https://img.shields.io/badge/Uvicorn-5A67D8?style=for-the-badge&logo=uvicorn&logoColor=white" alt="Uvicorn"> </p>
 Frontend
 <p align="left"> <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="Vue.js"> <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"> <img src="https://img.shields.io/badge/Pinia-FFD02F?style=for-the-badge&logo=pinia&logoColor=black" alt="Pinia"> <img src="https://img.shields.io/badge/Vue_Router-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" alt="Vue Router"> <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white" alt="Axios"> <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS"> </p>
-📁 Структура проекта
-text
-fastapi-shop/
-├── 📂 backend/
-│   ├── 📂 app/
-│   │   ├── ⚙️ config.py           # Настройки приложения
-│   │   ├── 🗄️ database.py         # Конфигурация БД
-│   │   ├── 🚀 main.py            # Главный файл приложения
-│   │   ├── 📂 models/            # Модели базы данных
-│   │   │   ├── __init__.py
-│   │   │   ├── 🏷️ category.py
-│   │   │   └── 📦 product.py
-│   │   ├── 📂 schemas/           # Pydantic схемы
-│   │   │   ├── category.py
-│   │   │   └── product.py
-│   │   ├── 📂 repositories/      # Слой доступа к данным
-│   │   │   ├── category_repository.py
-│   │   │   └── product_repository.py
-│   │   ├── 📂 services/          # Бизнес-логика
-│   │   │   ├── category_service.py
-│   │   │   ├── product_service.py
-│   │   │   └── cart_service.py
-│   │   ├── 📂 routes/            # API маршруты
-│   │   │   ├── __init__.py
-│   │   │   ├── products.py
-│   │   │   ├── categories.py
-│   │   │   └── cart.py
-│   │   └── 📂 static/            # Статические файлы
-│   │       └── 📂 images/
-│   ├── 📋 requirements.txt       # Python зависимости
-│   ├── 🎯 run.py                # Точка входа для запуска
-│   └── 🌱 seed_data.py          # Скрипт для заполнения БД
-└── 📂 frontend/
-    ├── 📂 src/
-    │   ├── 📂 components/        # Vue компоненты
-    │   │   ├── 🧩 Header.vue
-    │   │   ├── 🛒 CartItem.vue
-    │   │   └── ...
-    │   ├── 📂 views/             # Страницы приложения
-    │   │   ├── 🏠 HomePage.vue
-    │   │   ├── 🛍️ CartPage.vue
-    │   │   └── 📄 ProductDetailPage.vue
-    │   ├── 📂 stores/            # Pinia stores
-    │   ├── 📂 router/            # Vue Router конфигурация
-    │   ├── 🔧 main.js            # Главный файл приложения
-    │   └── 🎨 App.vue            # Корневой компонент
-    ├── 📦 package.json           # Node.js зависимости
-    ├── ⚡ vite.config.js         # Конфигурация Vite
-    └── 📄 index.html             # HTML шаблон
+
 🛠️ Установка и запуск
 Предварительные требования
 Python 3.8+ 🐍

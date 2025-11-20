@@ -55,6 +55,7 @@ fastapi-shop/
     ├── 📦 package.json           # Node.js зависимости
     ├── ⚡ vite.config.js         # Конфигурация Vite
     └── 📄 index.html             # HTML шаблон
+
 🛠️ Установка и запуск
 Предварительные требования
 Python 3.8+ 🐍

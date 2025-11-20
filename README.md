@@ -7,7 +7,7 @@ Backend
 Frontend
 <p align="left"> <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="Vue.js"> <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"> <img src="https://img.shields.io/badge/Pinia-FFD02F?style=for-the-badge&logo=pinia&logoColor=black" alt="Pinia"> <img src="https://img.shields.io/badge/Vue_Router-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" alt="Vue Router"> <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white" alt="Axios"> <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS"> </p>
 📁 Структура проекта
-bash
+text
 fastapi-shop/
 ├── 📂 backend/
 │   ├── 📂 app/
@@ -55,7 +55,6 @@ fastapi-shop/
     ├── 📦 package.json           # Node.js зависимости
     ├── ⚡ vite.config.js         # Конфигурация Vite
     └── 📄 index.html             # HTML шаблон
-
 🛠️ Установка и запуск
 Предварительные требования
 Python 3.8+ 🐍
@@ -183,9 +182,6 @@ npm run lint
 
 # Форматирование кода
 npm run format
-📞 Контакты и поддержка
-Если у вас есть вопросы или предложения по улучшению проекта, создайте issue в репозитории проекта.
-
 <div align="center">
 ⭐ Не забудьте поставить звезду репозиторию, если проект вам понравился!
 

@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - backend_data:/data
+    working_dir: /app
+    environment:
+      - DATABASE_URL=sqlite:////data/shop.db
+    command: >
+      sh -c "ln -sf /data/app.db /app/app.db || true && 
+             python seed_data.py && 
+             uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    networks:
+      - app-network
+
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+volumes:
+  backend_data:
+
+networks:
+  app-network:
+    driver: bridge

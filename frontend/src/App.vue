@@ -1,9 +1,3 @@
-<!-- frontend/src/App.vue -->
-<!--
-  Корневой компонент приложения.
-  Содержит общую структуру с Header и RouterView.
--->
-
 <template>
   <div id="app" class="min-h-screen bg-gray-50">
     <!-- Шапка сайта -->
@@ -32,9 +26,7 @@ import { useCartStore } from '@/stores/cart'
 
 const cartStore = useCartStore()
 
-/**
- * Инициализация приложения
- */
+//Инициализация приложения
 onMounted(() => {
   // Загрузить корзину из localStorage при запуске
   cartStore.initCart()

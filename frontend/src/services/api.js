@@ -1,10 +1,3 @@
-// frontend/src/services/api.js
-/**
- * API сервис для взаимодействия с backend.
- * Централизует все HTTP запросы к FastAPI серверу.
- * Использует axios для выполнения запросов.
- */
-
 import axios from 'axios'
 
 // Базовый URL API из переменных окружения или значение по умолчанию
@@ -18,58 +11,40 @@ const apiClient = axios.create({
   },
 })
 
-/**
- * API методы для работы с товарами
- */
+//API методы для работы с товарами 
 export const productsAPI = {
-  /**
-   * Получить все товары
-   */
+  //Получить все товары   
   getAll() {
     return apiClient.get('/products')
   },
 
-  /**
-   * Получить товар по ID
-   */
+  //Получить товар по ID   
   getById(id) {
     return apiClient.get(`/products/${id}`)
   },
 
-  /**
-   * Получить товары по категории
-   */
+  //Получить товары по категории  
   getByCategory(categoryId) {
     return apiClient.get(`/products/category/${categoryId}`)
   },
 }
 
-/**
- * API методы для работы с категориями
- */
+//API методы для работы с категориями
 export const categoriesAPI = {
-  /**
-   * Получить все категории
-   */
+  //Получить все категории
   getAll() {
     return apiClient.get('/categories')
   },
 
-  /**
-   * Получить категорию по ID
-   */
+  //Получить категорию по ID
   getById(id) {
     return apiClient.get(`/categories/${id}`)
   },
 }
 
-/**
- * API методы для работы с корзиной
- */
+//API методы для работы с корзиной
 export const cartAPI = {
-  /**
-   * Добавить товар в корзину
-   */
+  //Добавить товар в корзину
   addItem(item, cartData) {
     return apiClient.post('/cart/add', {
       product_id: item.product_id,
@@ -78,16 +53,12 @@ export const cartAPI = {
     })
   },
 
-  /**
-   * Получить содержимое корзины
-   */
+  //Получить содержимое корзины
   getCart(cartData) {
     return apiClient.post('/cart', cartData)
   },
 
-  /**
-   * Обновить количество товара
-   */
+  //Обновить количество товара
   updateItem(item, cartData) {
     return apiClient.post('/cart/update', {
       product_id: item.product_id,
@@ -96,9 +67,7 @@ export const cartAPI = {
     })
   },
 
-  /**
-   * Удалить товар из корзины
-   */
+  //Удалить товар из корзины
   removeItem(productId, cartData) {
     return apiClient.delete(`/cart/remove/${productId}`, {
       data: {

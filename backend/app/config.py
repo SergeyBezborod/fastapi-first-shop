@@ -14,6 +14,9 @@ class Settings(BaseSettings):
         "http://localhost:3000",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:3000",
+        "http://localhost:80",  
+        "http://frontend",      
+        "http://backend:8000",
     ]
     static_dir: str = "static"
     image_dir: str = "static/images"

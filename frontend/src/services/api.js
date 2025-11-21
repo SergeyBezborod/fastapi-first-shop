@@ -89,7 +89,7 @@ export const cartAPI = {
    * Обновить количество товара
    */
   updateItem(item, cartData) {
-    return apiClient.put('/cart/update', {
+    return apiClient.post('/cart/update', {
       product_id: item.product_id,
       amount: item.amount,
       cart: cartData,
